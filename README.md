@@ -81,7 +81,7 @@ For optimal performance of your validator node, we recommend:
 1. Run the setup script with the "Initialize node only" option:
 
    ```bash
-   ./setup-validator.sh
+   ./initExecution.sh
    ```
 
    Choose option 2 from the menu.
@@ -94,10 +94,10 @@ For optimal performance of your validator node, we recommend:
 
 1. From the setup script menu, select option 3 "Generate validator keys".
 
-2. You will be prompted to enter your ETH withdrawal address. This is the address where your staking rewards will be sent if you exit the validator.
+2. You will be prompted to enter your ETH/BLOCX withdrawal address. This is the address where your staking rewards will be sent if you exit the validator.
 
    ```bash
-   [INPUT] Enter your ETH withdrawal address: 0xYOUR_ETHEREUM_ADDRESS
+   [INPUT] Enter your ETH/BLOCX withdrawal address: 0xYOUR_ETHEREUM_ADDRESS
    ```
 
    > **CRITICAL**: Ensure this address is correct and that you have access to it. Once set, it CANNOT be changed!
@@ -124,10 +124,10 @@ For optimal performance of your validator node, we recommend:
 
 1. From the setup script menu, select option 5 "Set fee recipient address".
 
-2. Enter your ETH address that will receive transaction fees:
+2. Enter your ETH/BLOCX address that will receive transaction fees:
 
    ```bash
-   [INPUT] Enter your ETH fee recipient address: 0xYOUR_FEE_RECIPIENT_ADDRESS
+   [INPUT] Enter your ETH/BLOCX fee recipient address: 0xYOUR_FEE_RECIPIENT_ADDRESS
    ```
 
    This address can be the same as your withdrawal address or a different one.
