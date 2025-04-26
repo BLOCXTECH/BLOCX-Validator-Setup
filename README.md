@@ -83,6 +83,7 @@ For optimal performance of your validator node, we recommend:
    ```bash
    ./initExecution.sh
    ```
+- If you select automatic setup you can skip rest of the steps
 
 ### Step 2: Initializing the Node
 
