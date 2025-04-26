@@ -167,9 +167,6 @@ For optimal performance of your validator node, we recommend:
 4. To monitor sync progress, you can use these commands:
 
    ```bash
-   # For execution client sync progress
-   curl -s -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' http://localhost:8545 | jq
-
    # For beacon node sync progress
    curl -s -X GET http://localhost:5052/eth/v1/node/syncing | jq
    ```
@@ -338,7 +335,7 @@ After your node is fully synced with the network, you can deposit your stake to 
 
 ### Q: How can I check if my validator is active?
 
-**A:** Visit the BLOCX Explorer at [https://blocxscan.com/validators](https://blocxscan.com/validators) and search for your validator index or public key.
+**A:** Visit the BLOCX Explorer at [https://beacon.blocxscan.com/validators](https://beacon.blocxscan.com/validators) and search for your validator index or public key.
 
 ### Q: What should I do if I need to move my validator to a different machine?
 
