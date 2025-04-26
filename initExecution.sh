@@ -179,7 +179,7 @@ start_validator_node() {
     export CL_BOOTNODES=$(IFS=, ; echo "${STATIC_CL_BOOTNODES[*]}")
     export CL_TRUSTPEERS=$(IFS=, ; echo "${STATIC_CL_TRUSTPEERS[*]}")
     export CL_CHECKPOINT=$(IFS=, ; echo "${STATIC_CL_CHECKPOINTS[0]}")
-    export CHAIN_ID=9090
+    export CHAIN_ID=86996
     
     echo "export EL_BOOTNODES=$EL_BOOTNODES" #>> .env
     echo "export CL_BOOTNODES=$CL_BOOTNODES" #>> .env

@@ -70,11 +70,19 @@ For optimal performance of your validator node, we recommend:
 2. Install Docker and other dependencies:
 
    ```bash
+   git clone https://github.com/BLOCXTECH/BLOCX-Validator-Setup.git
+   cd BLOCX-Validator-Setup
    chmod +x *.sh
    ./docker-setup.sh
    ```
 
    This script will install Docker, Docker Compose, and other required dependencies.
+
+### Automatic setup
+- If you want to do entire thing automatically select option 1 while running
+   ```bash
+   ./initExecution.sh
+   ```
 
 ### Step 2: Initializing the Node
 
