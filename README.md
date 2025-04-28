@@ -328,6 +328,55 @@ After your node is fully synced with the network, you can deposit your stake to 
 
 3. Ensure your ISP is not blocking peer-to-peer connections.
 
+
+### Exiting Validator Node
+
+## **Important Considerations Before Exiting**
+
+- **Irreversibility**: Once a validator is exited, it cannot be reactivated. To resume staking, you'd need to generate new validator keys and initiate the staking process anew.
+
+- **Withdrawal Credentials**: Ensure your validator's withdrawal credentials are set to type `0x01`. This setting is necessary for automatic withdrawals. If your credentials are of type `0x00` (BLS), you'll need to update them before exiting.
+
+
+
+**Steps to Initiate a Voluntary Exit**
+
+1. Access the Validator Container
+
+First, identify and access your validator container using Docker:
+
+
+```bash
+docker exec -it $(docker ps --filter "name=validator" --format "{{.Names}}") bash
+```
+
+
+This command opens an interactive shell within the validator container.
+
+2. Execute the Voluntary Exit Command
+
+Within the container, run the following command to initiate the voluntary exit:
+
+
+```bash
+lighthouse account validator exit --keystore /validator_keys --beacon-node http://beacon:5052
+```
+
+
+Upon execution, you'll be prompted to enter the password associated with your keystore. After successful authentication, the voluntary exit message will be broadcasted to the network.
+
+
+Verifying the Exit Status
+
+To monitor the status of your validator's exit, you can use [beacon.blocxscan.com](http://beacon.blocxscan.com/)
+
+1. Navigate to [https://beacon.blocxscan.com/](https://beacon.blocxscan.com/).
+
+2. Enter your validator's public key or index in the search bar.
+
+3. Review the validator's status to confirm the exit process.
+
+
 ## FAQ
 
 ### Q: How long does it take for my node to sync?
