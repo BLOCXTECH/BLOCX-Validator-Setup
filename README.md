@@ -329,9 +329,10 @@ After your node is fully synced with the network, you can deposit your stake to 
 3. Ensure your ISP is not blocking peer-to-peer connections.
 
 
-### Exiting Validator Node
 
-## **Important Considerations Before Exiting**
+## Exiting Validator Node
+
+### **Important Considerations Before Exiting**
 
 - **Irreversibility**: Once a validator is exited, it cannot be reactivated. To resume staking, you'd need to generate new validator keys and initiate the staking process anew.
 
