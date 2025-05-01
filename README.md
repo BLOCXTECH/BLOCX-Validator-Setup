@@ -360,7 +360,7 @@ Within the container, run the following command to initiate the voluntary exit:
 
 
 ```bash
-lighthouse account validator exit --keystore /validator_keys --beacon-node http://beacon:5052
+lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data  --keystore /validator_keys --beacon-node http://beacon:5052
 ```
 
 
