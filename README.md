@@ -345,7 +345,9 @@ After your node is fully synced with the network, you can deposit your stake to 
 
 Run this command to open an interactive shell inside the validator container:
 
-docker exec -it $(docker ps --filter "name=validator" --format "{{.Names}}") bash
+```bash
+docker exec -it $(docker ps --filter "name=validator" --format "{{.Names}}")
+ ```
 
 ---
 
@@ -353,11 +355,15 @@ docker exec -it $(docker ps --filter "name=validator" --format "{{.Names}}") bas
 
 List your validator keys to identify the correct directory:
 
+```bash
 ls /validator_keys/
+ ```
 
 You will see folders like:
 
+```bash
 0xd76cb34a345c8543640ffded77335de1c78d6e6856ea1c8129bc00086147d6479f653fdebf5bc5e92e2720e9f3632441
+ ```
 
 ---
 
@@ -365,11 +371,15 @@ You will see folders like:
 
 Use the full path to your voting-keystore.json in the command:
 
+```bash
 lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data --keystore /validator_keys/<your-validator-folder>/voting-keystore.json --beacon-node http://beacon:5052
+ ```
 
 Example:
 
+```bash
 lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data --keystore /validator_keys/0xd76cb34a3.../voting-keystore.json --beacon-node http://beacon:5052
+ ```
 
 ---
 
@@ -379,7 +389,9 @@ When prompted:
 
 Enter the keystore password for validator...
 
+```bash
 → Type the password you set when you created the validator.
+ ```
 
 ---
 
@@ -391,7 +403,9 @@ Enter the exit phrase from the above URL to confirm the voluntary exit:
 
 → Type exactly:
 
+```bash
 Exit my validator
+ ```
 
 ---
 
