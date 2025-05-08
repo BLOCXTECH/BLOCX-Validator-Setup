@@ -339,35 +339,63 @@ After your node is fully synced with the network, you can deposit your stake to 
 - **Withdrawal Credentials**: Ensure your validator's withdrawal credentials are set to type `0x01`. This setting is necessary for automatic withdrawals. If your credentials are of type `0x00` (BLS), you'll need to update them before exiting.
 
 
+---
 
-**Steps to Initiate a Voluntary Exit**
+### **Access the Validator Container**
 
-1. Access the Validator Container
+Run this command to open an interactive shell inside the validator container:
 
-First, identify and access your validator container using Docker:
-
-
-```bash
 docker exec -it $(docker ps --filter "name=validator" --format "{{.Names}}") bash
-```
 
+---
 
-This command opens an interactive shell within the validator container.
+### **Locate the Specific Keystore**
 
-2. Execute the Voluntary Exit Command
+List your validator keys to identify the correct directory:
 
-Within the container, run the following command to initiate the voluntary exit:
+ls /validator_keys/
 
+You will see folders like:
 
-```bash
-lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data  --keystore /validator_keys --beacon-node http://beacon:5052
-```
+0xd76cb34a345c8543640ffded77335de1c78d6e6856ea1c8129bc00086147d6479f653fdebf5bc5e92e2720e9f3632441
 
+---
 
-Upon execution, you'll be prompted to enter the password associated with your keystore. After successful authentication, the voluntary exit message will be broadcasted to the network.
+### 3. Run the Voluntary Exit Command
 
+Use the full path to your voting-keystore.json in the command:
 
-Verifying the Exit Status
+lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data --keystore /validator_keys/<your-validator-folder>/voting-keystore.json --beacon-node http://beacon:5052
+
+Example:
+
+lighthouse account validator exit --testnet-dir=/el-cl-genesis-data/custom_config_data --keystore /validator_keys/0xd76cb34a3.../voting-keystore.json --beacon-node http://beacon:5052
+
+---
+
+### **Provide the Validator Password**
+
+When prompted:
+
+Enter the keystore password for validator...
+
+→ Type the password you set when you created the validator.
+
+---
+
+### **Provide the Exit Phrase**
+
+It will then prompt:
+
+Enter the exit phrase from the above URL to confirm the voluntary exit:
+
+→ Type exactly:
+
+Exit my validator
+
+---
+
+### **Verifying the Exit Status**
 
 To monitor the status of your validator's exit, you can use [beacon.blocxscan.com](http://beacon.blocxscan.com/)
 
@@ -376,6 +404,13 @@ To monitor the status of your validator's exit, you can use [beacon.blocxscan.co
 2. Enter your validator's public key or index in the search bar.
 
 3. Review the validator's status to confirm the exit process.
+
+
+### **Summary of Flow:**
+
+* Access container → list keys → run command → enter validator password → type exit phrase → done!
+
+---
 
 
 ## FAQ
